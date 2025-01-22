@@ -33,3 +33,4 @@ def update_dice(pmf, data):
 # posterior.normalize()
 # posterior *= likelihood4
 # posterior.normalize()
+
