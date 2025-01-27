@@ -5,7 +5,7 @@ import numpy as np
 import sys
 sys.path.append("/Users/seong-gyeongjun/Downloads/Baysian_Practice")
 import my_util.plot as plot
-from scipy.stats import multinomial
+from scipy.stats import multinomial, dirichlet
 
 
 
@@ -32,12 +32,15 @@ def update_beta(prior, data):
     beta = prior.beta + t - k
     return make_beta(alpha, beta)
 
-data = 3, 2, 1
-n = np.sum(data)
-ps = 0.4, 0.3, 0.3
+# data = 3, 2, 1
+# n = np.sum(data)
+# ps = 0.4, 0.3, 0.3
+#
+# print(multinomial.pmf(data, n, ps))
 
-print(multinomial.pmf(data, n, ps))
-
+alpha = 1, 2, 3
+dist = dirichlet(alpha)
+print(dist.rvs())
 
 
 
